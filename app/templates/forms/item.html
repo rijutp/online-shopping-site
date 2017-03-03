@@ -1,0 +1,12 @@
+{% extends 'layouts/form.html' %}
+{% block title %}Add Items{% endblock %}
+{% block content %}
+  <form method="post" class="form">
+    <h3 class="form-heading">Add Items <a href="{{ url_for('home') }}" title="Back to homepage"><i class="fa fa-home pull-right"></i></a></h3>
+    {{ form.itemname(class_ = 'form-control first-input', placeholder = form.itemname.label.text, required = true, autofocus = true) }}
+    {{ form.price(class_ = 'form-control', placeholder = form.price.label.text, required = true) }}
+    {{ form.description(class_ = 'form-control', placeholder = form.description.label.text, required = true) }}
+    <input type="submit" value="OK" class="btn btn-primary btn-lg btn-block"  >
+   <!--  <p>You must add database as well as Flask-Login to enable user management. See the <a href="http://www.realpython.com">Real Python</a> course for more info!</p> -->
+  </form>
+{% endblock %}
